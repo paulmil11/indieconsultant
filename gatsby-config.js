@@ -69,3 +69,35 @@ if(process.env.GA) {
 module.exports = {
   plugins: gatsbyPlugins
 };
+// gatsby-config.js
+module.exports = {
+plugins: [
+    {
+    resolve: `@draftbox-co/gatsby-ghost-balsa-ghost`,
+    options: {
+        siteConfig: {
+        siteUrl: `https://your-bog.com`,
+        postsPerPage: 12,
+        siteTitleMeta: `Gatsby Frontend powered by headless Ghost CMS`,
+        siteDescriptionMeta: `Turn your Ghost blog into a lightning fast static website with Gatsby`, 
+        shareImageWidth: 1000,
+        shareImageHeight: 523,
+        shortTitle: `Ghost`,
+        siteIcon: `favicon.png`,
+        backgroundColor: `#e9e9e9`,
+        themeColor: `#15171A`,
+        },
+        ghostConfig: {
+            "development": {
+                "apiUrl": "http://localhost:2368",
+                "contentApiKey": "9fcfdb1e5ea5b472e2e5b92942",
+            },
+            "production": {
+                "apiUrl": "https://your-ghost-cms.com",
+                "contentApiKey": "9fcfdb1e5ea5b472e2e5b92942",
+            },
+        },
+      },
+   },
+],  
+}
